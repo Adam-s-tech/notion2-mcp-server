@@ -329,6 +329,8 @@ services:
 
 Three tools, whichever of the 47 operations you end up calling. `notion_read` runs the reads, `notion_write` the writes, and `notion_describe` returns one operation's JSON Schema plus a working example, which is worth a round-trip before a complex call: filter expressions, mixed block batches, database property definitions. Each tool's `operation` field is an enum of exactly what this server has enabled, so the menu ships with the tool list, a client can validate a call before sending it, and a name sent to the wrong tool fails in one round-trip with a message naming the right one.
 
+Why the server exposes a few tools instead of one per endpoint: [MCP Tool Design for AI Agents, Not API Endpoints](https://yaroslavboiko.com/blog/mcp-tool-surface/).
+
 Every id field (`page_id`, `block_id`, `database_id`, `view_id`, …) also accepts a Notion URL, so paste what **Share → Copy link** gives you. A block link's `#fragment` is used for `block_id` fields and a database link's `?v=` for `view_id` fields.
 
 ```jsonc
