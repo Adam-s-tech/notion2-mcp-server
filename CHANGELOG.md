@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.1.2] - 2026-10-04
+
+### Changed
+
+- Dependencies: the lockfile now pins `hono` 4.13.12 (was 4.13.5), so the Docker image and the `.mcpb` bundle ship it. The server doesn't use `serveStatic`, so the GHSA-5r4p-p66f-jhc7 fix in 4.13.11 doesn't affect it. npm installs resolve their own dependency tree and are unchanged. No code changes.
+
 ## [3.1.1] - 2026-10-01
 
 ### Changed
